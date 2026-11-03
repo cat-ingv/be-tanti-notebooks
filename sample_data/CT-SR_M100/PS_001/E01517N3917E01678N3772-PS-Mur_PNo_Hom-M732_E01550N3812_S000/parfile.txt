@@ -1,0 +1,82 @@
+simulPS                      # Title
+grid0.grd             # Bathymetry file for level 0
+3                           # Initialization type (0:Sea surface displacement from file,1:Standard Okada,2:Standard Okada from file,3:Triangular Okada,4:Triangular Okada from file,5:Sea floor deformation from file,6:Gaussian)
+0                           # Apply Kajiura filter to the Okada deformation (0: no, 1: yes)
+31                           # Number of faults (>= 1)
+0 15.7667 37.7619 18.778 15.8822 37.8635 21.53 15.7571 37.9501 25.5 90.0 1.1 (90 rake-direzione gradi; slip)
+0 15.6408 37.8486 22.227 15.7667 37.7619 18.778 15.7571 37.9501 25.5 90.0 1.1
+0 15.6408 37.8486 22.227 15.7571 37.9501 25.5 15.6319 38.0365 29.611 90.0 1.1
+0 15.5138 37.9354 25.141 15.6408 37.8486 22.227 15.6319 38.0365 29.611 90.0 1.1
+0 15.5084 38.1223 35.074 15.5138 37.9354 25.141 15.6319 38.0365 29.611 90.0 1.1
+0 15.5084 38.1223 35.074 15.6319 38.0365 29.611 15.7485 38.138 32.948 90.0 1.1
+0 15.6235 38.2242 37.41 15.5084 38.1223 35.074 15.7485 38.138 32.948 90.0 1.1
+0 15.6235 38.2242 37.41 15.7485 38.138 32.948 15.7348 38.3271 37.07 90.0 1.1
+0 15.7348 38.3271 37.07 15.612 38.4127 43.216 15.6235 38.2242 37.41 90.0 1.1
+0 15.6235 38.2242 37.41 15.612 38.4127 43.216 15.5006 38.3098 43.419 90.0 1.1
+0 15.3857 38.2077 41.195 15.6235 38.2242 37.41 15.5006 38.3098 43.419 90.0 1.1
+0 15.0906 38.1241 40.899 15.2653 37.9938 27.855 15.2649 38.107 34.949 90.0 1.1
+0 15.2653 37.9938 27.855 15.3848 37.8984 24.612 15.3873 38.0218 28.596 90.0 1.1
+0 15.2649 38.107 34.949 15.3873 38.0218 28.596 15.3857 38.2077 41.195 90.0 1.1
+0 15.3873 38.0218 28.596 15.5084 38.1223 35.074 15.3857 38.2077 41.195 90.0 1.1
+0 15.2653 37.9938 27.855 15.3873 38.0218 28.596 15.2649 38.107 34.949 90.0 1.1
+0 15.5138 37.9354 25.141 15.3873 38.0218 28.596 15.3848 37.8984 24.612 90.0 1.1
+0 15.3848 37.8984 24.612 15.4762 37.8468 23.029 15.5138 37.9354 25.141 90.0 1.1
+0 15.985 38.1541 28.427 15.8598 38.2407 32.56 15.8727 38.0517 28.131 90.0 1.1
+0 15.8727 38.0517 28.131 15.7571 37.9501 25.5 15.9971 37.9651 23.677 90.0 1.1
+0 15.8598 38.2407 32.56 15.7485 38.138 32.948 15.8727 38.0517 28.131 90.0 1.1
+0 15.2649 38.107 34.949 15.3857 38.2077 41.195 15.1543 38.189 49.084 90.0 1.1
+0 15.8598 38.2407 32.56 15.7348 38.3271 37.07 15.7485 38.138 32.948 90.0 1.1
+0 15.5084 38.1223 35.074 15.6235 38.2242 37.41 15.3857 38.2077 41.195 90.0 1.1
+0 15.6319 38.0365 29.611 15.8727 38.0517 28.131 15.7485 38.138 32.948 90.0 1.1
+0 15.5084 38.1223 35.074 15.3873 38.0218 28.596 15.5138 37.9354 25.141 90.0 1.1
+0 15.6408 37.8486 22.227 15.5138 37.9354 25.141 15.4762 37.8468 23.029 90.0 1.1
+0 15.6408 37.8486 22.227 15.4762 37.8468 23.029 15.5501 37.7769 20.894 90.0 1.1
+0 15.5501 37.7769 20.894 15.6399 37.7254 18.491 15.6408 37.8486 22.227 90.0 1.1
+0 15.8727 38.0517 28.131 15.6319 38.0365 29.611 15.7571 37.9501 25.5 90.0 1.1
+0 15.6399 37.7254 18.491 15.7667 37.7619 18.778 15.6408 37.8486 22.227 90.0 1.1
+0                      #Use Okada computation window (0: no, 1: yes)
+PS_001/E01517N3917E01678N3772-PS-Mur_PNo_Hom-M732_E01550N3812_S000/grid0                # NetCDF file prefix for level 0
+0 0 0 0 0 0 0 0 0         # Variables saved (eta, maximum eta, velocities, modulus of velocity, momentum flux, maximum momentum flux, arrival times) (1: save, 0: do not save)
+4                        # Number of levels
+4                  # Refinement ratio of level 1
+2                  # Number of submeshes for level 1
+A_CT.grd           # Bathymetry file for level 1
+PS_001/E01517N3917E01678N3772-PS-Mur_PNo_Hom-M732_E01550N3812_S000/A_CT            # NetCDF file prefix for level 1
+0 0 0 0 0 0 0 0       # Variables saved (eta, maximum eta, velocities, modulus of velocity, momentum flux, maximum momentum flux, arrival times) (1: save, 0: do not save)
+A_SR.grd           # Bathymetry file for level 1
+PS_001/E01517N3917E01678N3772-PS-Mur_PNo_Hom-M732_E01550N3812_S000/A_SR            # NetCDF file prefix for level 1
+0 0 0 0 0 0 0 0 0     # Variables saved (eta, maximum eta, velocities, modulus of velocity, momentum flux, maximum momentum flux, arrival times) (1: save, 0: do not save)
+4                  # Refinement ratio of level 2
+2                  # Number of submeshes for level 2
+B_CT.grd           # Bathymetry file for level 2
+PS_001/E01517N3917E01678N3772-PS-Mur_PNo_Hom-M732_E01550N3812_S000/B_CT            # NetCDF file prefix for level 2
+0 0 0 0 0 0 0 0 0      # Variables saved (eta, maximum eta, velocities, modulus of velocity, momentum flux, maximum momentum flux, arrival times) (1: save, 0: do not save)
+B_SR.grd           # Bathymetry file for level 2
+PS_001/E01517N3917E01678N3772-PS-Mur_PNo_Hom-M732_E01550N3812_S000/B_SR           # NetCDF file prefix for level 2
+0 0 0 0 0 0 0 0 0       # Variables saved (eta, maximum eta, velocities, modulus of velocity, momentum flux, maximum momentum flux, arrival times) (1: save, 0: do not save)
+4                  # Refinement ratio of level 3
+2                  # Number of submeshes for level 3
+C_CT.grd           # Bathymetry file for level 2
+PS_001/E01517N3917E01678N3772-PS-Mur_PNo_Hom-M732_E01550N3812_S000/C_CT            # NetCDF file prefix for level 3
+0 1 0 0 1 0 0 1 0     # Variables saved (eta maximum_eta velocities modulus_of_velocity maximum_velocity maximum_mass_flow momentum_flux maximum_momentum_flux arrival_times) (1: save, 0: do not save)
+C_SR.grd           # Bathymetry file for level 2
+PS_001/E01517N3917E01678N3772-PS-Mur_PNo_Hom-M732_E01550N3812_S000/C_SR            # NetCDF file prefix for level 3
+0 1 0 0 1 0 0 1 0      # Variables saved (eta maximum_eta velocities modulus_of_velocity maximum_velocity maximum_mass_flow momentum_flux maximum_momentum_flux arrival_times) (1: save, 0: do not save)
+1                           # Upper border condition (1: open, -1: wall)
+1                           # Lower border condition
+1                           # Left border condition
+1                           # Right border condition
+14401.0                      # Simulation time (sec)
+14400.                        # Saving time of NetCDF files (sec) (-1: do not save)
+1                           # Read points from file (0: no, 1: yes). Used for time series
+ts.dat                      # File with point locations for time series
+30                          # Saving time of time series (sec)
+0.5                         # CFL
+5e-3                        # Epsilon h (m)
+20                          # Threshold for the 2s+WAF scheme (m)
+0.2 0.2 0.2 0.2             # Stability coefficient for each level
+0                           # Friction type (0: fixed, 1: variable) (it should be 0)
+0.01                        # Water-bottom friction (Manning coefficient)
+100                         # Maximum allowed velocity of water
+100000                      # L (typical length)
+1000                        # H (typical height)

@@ -1,0 +1,52 @@
+simulBS                      # Title
+grid0.grd             # Bathymetry file for level 0
+1                           # Initialization type (0:Sea surface displacement from file,1:Standard Okada,2:Standard Okada from file,3:Triangular Okada,4:Triangular Okada from file,5:Sea floor deformation from file,6:Gaussian)
+0                           # Apply Kajiura filter to the Okada deformation (0: no, 1: yes)
+1                           # Number of faults (>= 1)
+0. 15.9273 36.0284 14.607 183.45404594246375 38.135 67.5 50.0 90.0 7.525559016279378 #Time(sec) Lon_epicenter Lat_epicenter Depth_hypocenter(km) Fault_lenght(km) Fault_width(km) Strike Dip Rake Slip(m)
+0                      #Use Okada computation window (0: no, 1: yes)
+BS_002/E01267N3753E01646N3535-BS-M809_E01592N3602_D010_S067D50R090_A006995_S075/grid0                # NetCDF file prefix for level 0
+0 0 0 0 0 0 0 0 0         # Variables saved (eta maximum_eta velocities modulus_of_velocity maximum_velocity maximum_mass_flow momentum_flux maximum_momentum_flux arrival_times) (1: save, 0: do not save)
+4                        # Number of levels
+4                  # Refinement ratio of level 1
+2                  # Number of submeshes for level 1
+A_CT.grd           # Bathymetry file for level 1
+BS_002/E01267N3753E01646N3535-BS-M809_E01592N3602_D010_S067D50R090_A006995_S075/A_CT            # NetCDF file prefix for level 1
+0 0 0 0 0 0 0 0        # Variables saved (eta, maximum eta, velocities, modulus of velocity, momentum flux, maximum momentum flux, arrival times) (1: save, 0: do not save)
+A_SR.grd           # Bathymetry file for level 1
+BS_002/E01267N3753E01646N3535-BS-M809_E01592N3602_D010_S067D50R090_A006995_S075/A_SR            # NetCDF file prefix for level 1
+0 0 0 0 0 0 0      # Variables saved (eta, maximum eta, velocities, modulus of velocity, momentum flux, maximum momentum flux, arrival times) (1: save, 0: do not save)
+4                  # Refinement ratio of level 2
+2                  # Number of submeshes for level 2
+B_CT.grd           # Bathymetry file for level 2
+BS_002/E01267N3753E01646N3535-BS-M809_E01592N3602_D010_S067D50R090_A006995_S075/B_CT            # NetCDF file prefix for level 2
+0 0 0 0 0 0 0 0 0       # Variables saved (eta, maximum eta, velocities, modulus of velocity, momentum flux, maximum momentum flux, arrival times) (1: save, 0: do not save)
+B_SR.grd           # Bathymetry file for level 2
+BS_002/E01267N3753E01646N3535-BS-M809_E01592N3602_D010_S067D50R090_A006995_S075/B_SR           # NetCDF file prefix for level 2
+0 0 0 0 0 0 0 0 0      # Variables saved (eta, maximum eta, velocities, modulus of velocity, momentum flux, maximum momentum flux, arrival times) (1: save, 0: do not save)
+4                  # Refinement ratio of level 3
+2                  # Number of submeshes for level 3
+C_CT.grd           # Bathymetry file for level 2
+BS_002/E01267N3753E01646N3535-BS-M809_E01592N3602_D010_S067D50R090_A006995_S075/C_CT            # NetCDF file prefix for level 3
+0 1 0 0 1 0 0 1 0     # Variables saved (eta maximum_eta velocities modulus_of_velocity maximum_velocity maximum_mass_flow momentum_flux maximum_momentum_flux arrival_times) (1: save, 0: do not save)
+C_SR.grd           # Bathymetry file for level 2
+BS_002/E01267N3753E01646N3535-BS-M809_E01592N3602_D010_S067D50R090_A006995_S075/C_SR            # NetCDF file prefix for level 3
+0 1 0 0 1 0 0 1 0      # Variables saved (eta maximum_eta velocities modulus_of_velocity maximum_velocity maximum_mass_flow momentum_flux maximum_momentum_flux arrival_times) (1: save, 0: do not save)
+1                           # Upper border condition (1: open, -1: wall)
+1                           # Lower border condition
+1                           # Left border condition
+1                           # Right border condition
+14401.0                      # Simulation time (sec)
+14400.                        # Saving time of NetCDF files (sec) (-1: do not save)
+1                           # Read points from file (0: no, 1: yes). Used for time series
+ts.dat                      # File with point locations for time series
+30                          # Saving time of time series (sec)
+0.5                         # CFL
+5e-3                        # Epsilon h (m)
+20                          # Threshold for the 2s+WAF scheme (m)
+0.2 0.2 0.2 0.2             # Stability coefficient for each level
+0                           # Friction type (0: fixed, 1: variable) (it should be 0)
+0.02                        # Water-bottom friction (Manning coefficient)
+100                         # Maximum allowed velocity of water
+100000                      # L (typical length)
+1000                        # H (typical height)
