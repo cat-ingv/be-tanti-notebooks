@@ -1,0 +1,6 @@
+notebooks/*/__pycache__
+notebooks/*/*/__pycache__
+notebooks/*/.ipynb_checkpoints
+.DS_Store
+sample_data/download_tmp/*
+*.pyc
