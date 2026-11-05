@@ -1,0 +1,9 @@
+config/*.ini
+notebooks/*/__pycache__
+notebooks/*/*/__pycache__
+notebooks/*/.ipynb_checkpoints
+notebooks/4_whatif_analysis/flow_depth.cpt
+notebooks/7_importance_sampling/data/*
+.DS_Store
+sample_data/download_tmp/*
+*.pyc
