@@ -1,17 +1,8 @@
 ---------------------------------------------------------------------------------------------------------------------------------
--- QUERY: Select Simulation Runs Outputs based on Simulation Runs Parameters 
+-- QUERY: Select Simulation Runs Parameters for BS-type scenarios for a given value of manning coefficiet (0.01)
 --    Input: 
---       - mag_min,mag_max: min and max value of magnitudo to select
---       - manning_coef_min,manning_coef_max: min and max value of Manning Coefficient to selected_sr
---       - fault_lenght_min,fault_lenght_max: min and max value of the fault lenght
---       - fault_width_min,fault_width_max: min and max value of the fault width
---       - rake_min,rake_max: min and max value of rake to select
---       - slip_min,slip_max: min and max value of slip to select
---       - strike_min,strike_min: min and max value of strike to select (for BS-events)
---       - dip_min,dip_max: min and max value of dip to select (for BS-events)
---       - in_bbox: 3D bounding box where to search epicenter of the BS-events or the centroid of the mesh faults for PS-event 
 --    Output: 
---       - selected Simulation Runs Output
+--       - List of Simulation Run parameters for each BS-type scenario
 ---------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -38,7 +29,7 @@ sr_params_ps as (
 		params.fault_centre_lon,
 		params.fault_centre_lat,
 		params.fault_centre_depth,
-		params.fault_lenght,
+		params.fault_length,
 		params.fault_width,
 		params.strike,
 		params.dip,

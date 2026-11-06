@@ -3,7 +3,7 @@
 --    Input: 
 --       - mag_min,mag_max: min and max value of magnitudo to select
 --       - manning_coef_min,manning_coef_max: min and max value of Manning Coefficient to selected_sr
---       - fault_lenght_min,fault_lenght_max: min and max value of the fault lenght
+--       - fault_length_min,fault_length_max: min and max value of the fault lenght
 --       - fault_width_min,fault_width_max: min and max value of the fault width
 --       - rake_min,rake_max: min and max value of rake to select
 --       - slip_min,slip_max: min and max value of slip to select
@@ -40,7 +40,7 @@ sr_params as (
       params.fault_centre_lon,
 		params.fault_centre_lat,
 		params.fault_centre_depth,
-		params.fault_lenght,
+		params.fault_length,
 		params.fault_width,
 		params.strike,
 		params.dip,
@@ -86,9 +86,9 @@ selected_sr as (
       --(slip_bs_ps between 0 and 10)
       (slip_bs_ps between %(slip_min)s and %(slip_max)s)
    and
-      -- check fault_lenght is in an interval
-      -- (fault_lenght is null or fault_lenght between 0 and 200)
-      (fault_lenght is null or fault_lenght between %(fault_lenght_min)s and %(fault_lenght_max)s)
+      -- check fault_length is in an interval
+      -- (fault_length is null or fault_length between 0 and 200)
+      (fault_length is null or fault_length between %(fault_length_min)s and %(fault_length_max)s)
    and
       -- check fault_width is in an interval
       --(fault_width is null or fault_width between 0 and 200)
