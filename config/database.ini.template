@@ -1,6 +1,6 @@
 [postgresql]
 db_host=localhost
 db_port=5409 
-db_name=ct_sr_db_postgis
+db_name=betanti_db_postgis
 db_user=postgres
 db_password=postgres
