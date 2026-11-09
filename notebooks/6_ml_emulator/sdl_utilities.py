@@ -14,3 +14,14 @@ def download_sdl_file(download_dir,file_sdl_path,sdl_client):
         print(f"......File: {file_local_path} already exists")
     else:
         sdl_client.file.download(experiment_id=207,version='1.0.0',file_path=file_sdl_path,output_filename=file_local_path)
+
+
+
+def check_download(df_paths, download_dir, cols=['c_nc', 'grid0_ts']):
+    list_all_files = df_paths['c_nc'].tolist() + df_paths['grid0_ts'].tolist()
+    list_missing_files = [f for f in list_all_files if not os.path.exists(os.path.join(download_dir, f))]
+    if len(list_missing_files)==0:
+        check = "Donwload completed: all files have been successufully downloaded"
+    else:
+        check = f"Donwload completed: {len(list_missing_files)} files are missing. Restart the download."
+    return check
