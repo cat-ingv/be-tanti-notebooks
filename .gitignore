@@ -6,4 +6,5 @@ notebooks/4_whatif_analysis/flow_depth.cpt
 notebooks/7_importance_sampling/data/*
 .DS_Store
 sample_data/download_tmp/*
+!sample_data/download_tmp/.gitkeep
 *.pyc

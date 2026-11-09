@@ -25,15 +25,21 @@ Make sure you have the following prerequisites in place before proceeding:
  - Docker
  - GMT≥6
  - Python≥3.12 (ideally with conda)
- - credential to access Cineca's Simulation Data Lake (SDL) portal
+ - Credential to access Cineca's Simulation Data Lake (SDL) portal
  - A PostgreSQL GUI client (optional)
 
 
- ## Setup
+## Setup
 
 The Experiment datataset, including *Metadata Schema* and *Simulation Data*, is available on Cineca's Simulation Data Lake (SDL) at the following URL: 
 
 [https://sdl.hpc.cineca.it/app/experiments/207/versions/1.0.0/summary](https://sdl.hpc.cineca.it/app/experiments/207/versions/1.0.0/summary)
+
+Clone the repository locally:
+
+```bash
+> git clone git@gitlab.rm.ingv.it:cat/dataset-catania-siracusa.git
+```
 
 ### Access to Simulation Data Lake (SDL)
 
@@ -41,26 +47,26 @@ In order to access the SDL we use the Simulation Datalake Control *sdlctl* which
 
 First create a conda Python environment and install the *sdlctl*. From the conda virtual environment:
 ```
-conda create -n myenv python=3.12
-pip install sdlctl --index-url https://gitlab.hpc.cineca.it/api/v4/projects/1647/packages/pypi/simple
+> conda create -n betanti_env python=3.12
+> conda activate betanti_env
+> pip install sdlctl --index-url https://gitlab.hpc.cineca.it/api/v4/projects/1647/packages/pypi/simple
 ```
 
 > **NOTE**
 > To upgrade the sdlctl package to the lat version, from the virtual environment runs:
 > ```
-> pip install sdlctl -U --index-url https://gitlab.hpc.cineca.it/api/v4/projects/1647/packages/pypi/simple
+> > pip install sdlctl -U --index-url https://gitlab.hpc.cineca.it/api/v4/projects/1647/packages/pypi/simple
 > ```
 
 Next, one should authenticate on SDL by running the command
 ```
-> sdlctl setenv dev
 > sdlctl user login
 ```
 and inserting the credential. 
 
 You can check the user status by running:
 ```
-sdlctl user status
+> sdlctl user status
 ```
 
 
@@ -75,31 +81,32 @@ Navigate to the [eperiment](https://sdl.hpc.cineca.it/app/experiments/207/versio
 
 Alternatevely one can download the file using the CLI, run the command:
 ```
-    > sdlctl file download -id 207 --filepath CT-SR_M100/exp_metadata/exp_metadata_db.dump
+> sdlctl file download -id 207 --filepath CT-SR_M100/exp_metadata/exp_metadata_db.dump
 ```
 using the last version of the experiment and set as output the full path (including the name) where to download the file locally ([/path/to/exp_metadata_db.dump]).
 
 Next, we can restore the metadataschema in the postgreSQL:
   1. starts a PostgreSQL database with PostGIS in a Docker container
      ```
-     > docker run -p 5409:5432 --rm --name ct-sr-db-postgres -e POSTGRES_PASSWORD=postgres -d postgis/postgis
+     > docker run -p 5409:5432 --rm --name betanti-postgres -e POSTGRES_PASSWORD=postgres -d postgis/postgis:15-3.3
      ```
   2. copy the backup file into the Docker container:
      ```
-     > docker cp [/path/to/exp_metadata_db.dump] ct-sr-db-postgres:/tmp/exp_metadata_db.dump
+     > docker cp [/path/to/exp_metadata_db.dump] betanti-postgres:/tmp/exp_metadata_db.dump
      ```
-  3. Access the container as postgres user and restore the DB from the dump file:
+  3. Access the container as postgres user and restore the DB from the dump file (it may take some minute):
      ```
-     > docker exec -u postgres -it ct-sr-db-postgres bash
-
+     > docker exec -u postgres -it betanti-postgres bash
      > pg_restore -U postgres -C -d postgres /tmp/exp_metadata_db.dump
+     > exit
+     ```
 
 > **Note**  
 > Make sure that the configuration file *config/database.ini* contains the same options used in the above steps.
 > ```
 > [postgresql]
 > host=localhost
-> database=ct_sr_db
+> database=betanti_db_postgis
 > user=postgres
 > password=postgres
 > ```
@@ -112,16 +119,10 @@ Alternatively, one can restore the PostgreSQL database using Singularity, check 
 
 ## Usage
 
-Clone the repository locally:
-
-```bash
-git clone git@gitlab.rm.ingv.it:cat/dataset-catania-siracusa.git
-```
-
 Activate the virtual environment and install all the python dependencies listed in *./requirements.txt*
 
 ```bash
-> cd dataset-catania-siracusa
+> cd betanti_env
 > pip install -r requirements.txt
 ```
 
