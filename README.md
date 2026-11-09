@@ -25,7 +25,7 @@ Make sure you have the following prerequisites in place before proceeding:
  - Docker
  - GMT≥6
  - Python≥3.12 (ideally with conda)
- - credential to access Cineca's Simulation Data Lake (SDL) portal
+ - Credential to access Cineca's Simulation Data Lake (SDL) portal
  - A PostgreSQL GUI client (optional)
 
 
@@ -38,7 +38,7 @@ The Experiment datataset, including *Metadata Schema* and *Simulation Data*, is 
 Clone the repository locally:
 
 ```bash
-git clone git@gitlab.rm.ingv.it:cat/dataset-catania-siracusa.git
+> git clone git@gitlab.rm.ingv.it:cat/dataset-catania-siracusa.git
 ```
 
 ### Access to Simulation Data Lake (SDL)
@@ -81,7 +81,7 @@ Navigate to the [eperiment](https://sdl.hpc.cineca.it/app/experiments/207/versio
 
 Alternatevely one can download the file using the CLI, run the command:
 ```
-    > sdlctl file download -id 207 --filepath CT-SR_M100/exp_metadata/exp_metadata_db.dump
+> sdlctl file download -id 207 --filepath CT-SR_M100/exp_metadata/exp_metadata_db.dump
 ```
 using the last version of the experiment and set as output the full path (including the name) where to download the file locally ([/path/to/exp_metadata_db.dump]).
 
