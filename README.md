@@ -199,4 +199,12 @@ Since training and test sets can be large and one may want to train multiple mod
 
 We provide a notebook (*importance_sampling.ipynb*) to implement the Important Stratified Sampling technicque: given a site (Catania or Siracusa) we select a subset of representative scenarios that approximate the hazard curve.
 To run the notebook one should just specify the path of the database configuration file (*path_conf_file*) as it makes use of metadata available in the experiment.
-Additionally, we provide a second notebook (*flowdepth_hazard_curves.ipynb*) to compute the onshore hazard curves based on maximum flow depth using the sampled scenarios
+Additionally, we provide a second notebook (*flowdepth_hazard_curves.ipynb*) to compute the onshore hazard curves based on maximum flow depth using the sampled scenarios. To optimize the download performances the datasets downloaded with from SDL are stored under the same path used in previous notebook.
+
+
+### Use case 8: Probabilistic Tsunami Risk Analysis
+
+We provide a notebook for performing Probabilistic Tsunami Risk Assessment (PTRA) through hazard–vulnerability convolution as implemented in the European Tsunami Risk Service (ETRiS). Namely, tsunami hazard curves are convolved with vulnerability functions to estimate conditional loss exceedance probabilities and Loss Exceedance Curves (LECs).
+
+The notebook directly uses the hazard curves obtained from the Importance Sampling in Use Case 7. Make sure to run the Use Case 7 notebooks first to generate the required input files.
+
