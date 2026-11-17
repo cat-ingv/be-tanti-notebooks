@@ -197,5 +197,6 @@ Since training and test sets can be large and one may want to train multiple mod
 
 ### Use case 7: Important Sampling of Scenarios
 
-In this notebook we implements the Important Stratified Sampling technicques: given a site (Catania or Siracusa) we select a subset of representative scenarios that approximate the hazard curve.
-To run the notebook use should just specify the path of the database configuration file (*path_conf_file*) as it makes use of metadata available in the experiment.
+We provide a notebook (*importance_sampling.ipynb*) to implement the Important Stratified Sampling technicque: given a site (Catania or Siracusa) we select a subset of representative scenarios that approximate the hazard curve.
+To run the notebook one should just specify the path of the database configuration file (*path_conf_file*) as it makes use of metadata available in the experiment.
+Additionally, we provide a second notebook (*flowdepth_hazard_curves.ipynb*) to compute the onshore hazard curves based on maximum flow depth using the sampled scenarios

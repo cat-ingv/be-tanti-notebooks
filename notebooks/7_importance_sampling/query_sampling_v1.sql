@@ -29,6 +29,7 @@ with sr_params as (
 ),
 sr_params_ext as (
 select 
+	sr.id as sr_id,
 	sr.name as id_scen,
 	sr_params.seismicity_type,
 	sr_params.avg_rate,
